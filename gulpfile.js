@@ -83,7 +83,7 @@ gulp.task('scripts', function() {
       plugins: [
       ]
     }))
-//    .pipe(g.uglifyjs())
+    .pipe(g.uglifyjs())
     .pipe(gulp.dest(WWW + 'scripts/'))
     .pipe(g.size({ title : 'scripts' }))
     .pipe(g.connect.reload());
