@@ -1,0 +1,39 @@
+{
+  "name": "sb2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Julien Barbay <barbay.julien@gmail.com> (http://github.com/ynk/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-jest": "^14.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "bluebird": "^3.4.1",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-ejs-pages": "git+https://github.com/ynk/gulp-ejs-pages.git#feature/no-config",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-size": "^2.1.0",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.9",
+    "run-sequence": "^1.2.2",
+    "webpack": "^1.13.1",
+    "webpack-stream": "^3.2.0"
+  },
+  "dependencies": {
+    "q": "^1.4.1"
+  }
+}
