@@ -7,4 +7,43 @@
   ga('create', 'UA-81923755-1', 'auto');
   ga('send', 'pageview');
 
+  (function() {
+    if (!MutationObserver)
+      return ga('send', 'event', 'no-tracking');
+
+      var classes = [];
+
+      new MutationObserver(
+        function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.attributeName !== 'class')
+              return;
+
+            // class diff
+            var state   = mutation.target.className.split(' '),
+                added   = state.filter(function(string) {
+                                  return classes.indexOf(string) == -1
+                               }),
+                removed = classes.filter(function(string) {
+                                  return state.indexOf(string) == -1
+                               })
+
+            classes = state;
+
+            // ga events
+            switch(true) {
+              case (added.indexOf('processing') != -1):
+                return ga('send', 'event', 'processing', 'start');
+
+              case (removed.indexOf('processing') != -1):
+                return ga('send', 'event', 'processing', 'stop');
+            }
+          });
+        })
+      .observe(document.querySelector('section'), {
+        attributes: true,
+        childList: false,
+        characterData: false
+      });
+  })()
 </script>
